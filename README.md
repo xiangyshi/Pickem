@@ -1,4 +1,5 @@
-# Pickem
+# Pick'em!
+## By Xiangyu(Leo) Shi
 
 ### Esports!
 Although esports differs from traditional sports like soccer or basketball, the fans are no less enthusiastic while watching a game, hoping the team they root for will prevail in the end. Among the popular competitive games currently, the League of Legends Worlds Championship is undoubtedly the most anticipated esports event of the year.
