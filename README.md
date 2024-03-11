@@ -60,7 +60,7 @@ The following features were crafted from existing columns:
 | `csat10pct` | `float` | Ally weighted cs advantage at 15 min |
 
 Each of the aforementioned features were calculated using the following formula:
-Define $x_0 = $ `(feature)at(time)`, $x_1 = $ `opp_(feature)at(time)`, the weighed advantage is $$\frac{x_0 - x_1}{x_0}$$
+Define x_0 = `(feature)at(time)`, x_1 = `opp_(feature)at(time)`, the weighed advantage is (x_0 - x_1) / x_0
 
 Additionally, the `string` type feature, `teamname`, is one-hot-encoded (this is for the final model).
 
