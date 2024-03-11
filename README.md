@@ -20,7 +20,8 @@ In this project, we will only focus on the gameplay for the early game, and use 
 
 ### Selection of features
 
-As mentioned previously, we will only consider data from the first 15 minutes of any given match, so the following columns from the dataset is selected: 
+As mentioned previously, we will only consider data from the first 15 minutes of any given match, so the following columns from the dataset is selected:
+
 | Feature Name | type | Description |
 |:------------|---|-----------:|
 | `goldat10`  | `int` | Ally total gold at 10 min |
@@ -47,6 +48,7 @@ As mentioned previously, we will only consider data from the first 15 minutes of
 ### Feature Engineering
 
 The following features were crafted from existing columns: 
+
 | Feature Name | type | Description |
 |:------------|---|-----------:|
 | `goldat10pct`  | `float` | Ally weighted gold advantage at 10 min|
@@ -127,7 +129,6 @@ baseline = Pipeline([
     ('Model', LogisticRegression(max_iter=3000, C=0.1, solver='saga', random_state=42))
 ])
 
-
 ```
 
 As a result, the baseline model is able to produce a score of ~0.75 for the testing set, and ~0.72 for the Worlds set. A fair prediction.
@@ -139,6 +140,7 @@ For more in-depth prediction, I have selected the `RandomForestClassifier`. This
 Source code:
 
 ```
+
 model = Pipeline([
     ('ColumnDrop', Dropper(['side', 'gameid', 'position', 'league', 'teamname'])),
     ('TextEncoding', encoder),
@@ -151,6 +153,7 @@ hyper_param = {
 
 cv = GridSearchCV(model, hyper_param, cv=5)
 cv.fit(X_train, y_train)
+
 ```
 
 As a result, we were able to produce a score of ~0.75 for the testing set (again), and ~0.73 for the Worlds set. While this is indeed an improvement, this is certainly not the best model to use when selecting pick'em teams.
